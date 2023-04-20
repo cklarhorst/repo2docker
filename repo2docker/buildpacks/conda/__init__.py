@@ -44,6 +44,8 @@ class CondaBuildPack(BaseImage):
             return "linux-64"
         if self.platform == "linux/arm64":
             return "linux-aarch64"
+        if self.platform == "linux/armhf":
+            return "linux-armhf"
         raise ValueError(f"Unknown platform {self.platform}")
 
     @lru_cache()
